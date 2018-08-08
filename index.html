@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Dice Simulator</title>
+    <link rel="stylesheet" href="dice.css"/>
+</head>  
+<body>
+    <div id= "mainDiv"></div>
+  <script src="dice.js"></script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript is awesome</title>
+        <style>
+            .bar {  background-Color: green;
+                    height: 500px;
+                    width: 50px;
+                    position: absolute;
+                    bottom: 100px;
+                    left: 100px;
+                }
+            .label {    position: absolute;
+                        bottom: 80px; }
+        </style>
+        <script>
+            function init()
+            {
+                var rollButton = document.getElementById("rollButton");
+                rollButton.addEventListener("click", roll);
+            }
+             
+            function roll()
+            {
+                var totalOutcomes = 6;
+                var totals = new Array(totalOutcomes);
+                for(var i = 0; i < totalOutcomes; i++)
+                {
+                    totals[i] = 0;
+                }
+                 
+                var numberOfRolls = parseInt(document.getElementById("numberOfRolls").value);
+                for(var i = 0; i < numberOfRolls; i++)
+                {
+                    var dieValue = Math.floor(Math.random() * 6) + 1;
+                    totals[dieValue - 1]++;
+                }
+                 
+                generateResultTable(totals, totalOutcomes);
+                generateResultBarGraph(totals, totalOutcomes, numberOfRolls);
+            }
+             
+            function generateResultTable(totals, totalOutcomes)
+            {
+                var tableHTML = "<table>";
+                for(var i = 0; i < totalOutcomes; i++)
+                {
+                    tableHTML += "<tr><td>";
+                    tableHTML += i + 1;
+                    tableHTML += "</td>";
+                    tableHTML += "<td>";
+                    tableHTML += totals[i];
+                    tableHTML += "</td></tr>";
+                }
+                 
+                tableHTML += "</table>";
+                var resultTable = document.getElementById("resultTable");
+                resultTable.innerHTML = tableHTML;
+            }
+             
+            function generateResultBarGraph(totals, totalOutcomes, numberOfRolls)
+            {
+                var graphHTML = "";
+                for(var i = 0; i < totalOutcomes; i++)
+                {
+                    graphHTML += "<div id='bar" + i + "' class='bar'></div>";
+                    graphHTML += "<div id='label" + i + "' class='label'>" + (i + 1) + "</div>";
+                }
+                 
+                var barGraph = document.getElementById("barGraph");
+                barGraph.innerHTML = graphHTML;
+                 
+                for(var i = 0; i < totalOutcomes; i++)
+                {
+                    var bar = document.getElementById("bar" + i);
+                    bar.style.left = 100 * i + 100 + "px";
+                    var label = document.getElementById("label" + i);
+                    label.style.left = 100 * i + 100 + "px";
+                    var height = totals[i]/numberOfRolls * 2000;
+                    bar.style.height = height + "px";
+                }
+            }
+             
+            window.addEventListener("load", init);
+        </script>
+    </head>
+    <body>
+        <form>
+            Number of Rolls:
+            <input id="numberOfRolls" value="100">
+            <br>
+            <input id="rollButton" type="button" value="Roll">
+        </form>
+        <div id="resultTable"></div>
+        <div id="barGraph"></div>
+    </body>
+</html> -->
